@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  db:
+    env_file:
+      - .env
+    image: postgres:16
+    container_name: postgres
+    restart: always
+    # environment:
+    #   POSTGRES_DB: base_de_dados
+    #   POSTGRES_USER: postgres
+    #   POSTGRES_PASSWORD: 123Mudar
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/16/data
+volumes:
+  postgres_data: {}
